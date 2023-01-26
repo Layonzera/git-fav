@@ -101,40 +101,61 @@ header {
   fill: var(--color-button);
 }
 
-table {
-  border-spacing: 0;
-  width: 100%;
-  border-radius: 1rem;
+.table {
+  border: 1px solid var(--light-blue);
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  max-height: 68.8rem;
+  overflow-y: overlay;
 }
 
-thead {
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table * {
+  font-size: 2rem;
+  line-height: 160%;
+  color: var(--text-color);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-even);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--color-odd);
+
+  border-top: 1px solid var(--light-blue);
+  border-bottom: 1px solid var(--light-blue);
+}
+
+table th {
   background-color: var(--color-header-table);
   text-align: left;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 3.2rem;
-  color: var(--text-color);
+  padding: 1.6rem 4rem;
 }
 
-th,
-td {
-  padding: 1.6rem 2.4rem 1.6rem 4rem;
+table th:first-child {
+  width: 35vw;
 }
 
-tbody tr:nth-child(even) td {
-  background-color: var(--color-odd);
+.table::-webkit-scrollbar {
+  width: 2.2rem;
 }
 
-table tr td {
-  border-top: 1px solid var(--color-button);
+.table::-webkit-scrollbar-thumb {
+  background-color: var(--color-button);
+  border-radius: 1rem;
+
+  border: 0.8rem solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
 }
 
-td {
-  background-color: var(--color-even);
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 3.2rem;
-  color: var(--text-color);
+table td {
+  padding: 2.4rem 4rem;
 }
 
 .user {
@@ -144,7 +165,10 @@ td {
 }
 
 .user img {
-  max-width: 5.6rem;
+  width: 5.6rem;
+  height: 5.6rem;
+
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -168,4 +192,35 @@ td {
   line-height: 3.2rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.empty {
+  font-family: var(--font-roboto-mono);
+  background-color: var(--color-odd);
+
+  display: flex;
+}
+
+.no-fav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  margin: 21rem auto 28.7rem;
+}
+
+.no-fav svg {
+  width: 13.2rem;
+  height: 12.5rem;
+}
+
+.no-fav h2 {
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: #4e5455;
+}
+
+.hide {
+  display: none;
 }
